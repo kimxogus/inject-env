@@ -1,6 +1,10 @@
 # string-env-parser
 > Parse environment variables from string
 
+[![npm version](https://img.shields.io/npm/v/string-env-parser.svg)](https://npmjs.org/package/string-env-parser)
+[![npm downloads](https://img.shields.io/npm/dm/string-env-parser.svg)](https://npmjs.org/package/string-env-parser)
+
+
 [![Build Status](https://travis-ci.org/kimxogus/string-env-parser.svg?branch=master)](https://travis-ci.org/kimxogus/string-env-parser)
 
 ## Installation
