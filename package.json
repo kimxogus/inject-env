@@ -1,0 +1,15 @@
+{
+  "name": "string-env-parser",
+  "description": "Parse environment variables from string",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/kimxogus/string-env-parser.git",
+    "type": "git"
+  },
+  "author": {
+    "name": "Taehyun Kim",
+    "email": "kgyoo8232@gmail.com"
+  },
+  "license": "MIT"
+}
