@@ -1,8 +1,10 @@
 var regexp = /\$\{(.*?)\}/;
 
-exports.getEnvVar = function getEnvVar(name, defaultValue) {
+function getEnvVar(name, defaultValue) {
   return process.env[name] ? process.env[name] : defaultValue;
 }
+
+exports.getEnvVar = getEnvVar;
 
 module.exports = function(s) {
   while (regexp.test(s)) {

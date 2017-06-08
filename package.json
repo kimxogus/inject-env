@@ -11,5 +11,13 @@
     "name": "Taehyun Kim",
     "email": "kgyoo8232@gmail.com"
   },
-  "license": "MIT"
+  "scripts": {
+    "test": "jest",
+    "prepublish": "npm run test"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "jest-cli": "^20.0.4"
+  },
+  "dependencies": {}
 }
