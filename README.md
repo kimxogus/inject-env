@@ -1,5 +1,7 @@
 # string-env-parser
-Parse environment variables from string
+> Parse environment variables from string
+
+[![Build Status](https://travis-ci.org/kimxogus/string-env-parser.svg?branch=master)](https://travis-ci.org/kimxogus/string-env-parser)
 
 ## Installation
 - npm
