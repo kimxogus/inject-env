@@ -12,4 +12,9 @@ describe('string-env-parser', function() {
     expect(stringEnvParser('${NOT_EXISTS:default}/${NO:no}')).toBe('default/no');
     expect(stringEnvParser('${NOT_EXISTS:default}/file')).toBe('default/file');
   });
+
+  it('does not work without \'{\' and \'}\' characters', function() {
+    expect(stringEnvParser('$NODE_ENV')).toBe('$NODE_ENV');
+    expect(stringEnvParser('$NODE_ENV:default')).toBe('$NODE_ENV:default');
+  });
 });

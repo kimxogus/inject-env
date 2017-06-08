@@ -25,4 +25,7 @@ stringEnvParser('${NODE_ENV}');             // undefined
 
 // With default value
 stringEnvParser('${NODE_ENV:development}')  // development
+
+// Does not work without '{' and '}' characters!
+stringEnvParser('$NODE_ENV');               // $NODE_ENV
 ```
