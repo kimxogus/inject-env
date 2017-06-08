@@ -3,6 +3,7 @@
   "description": "Parse environment variables from string",
   "version": "0.1.0",
   "main": "index.js",
+  "typing": "index.d.ts",
   "repository": {
     "url": "https://github.com/kimxogus/string-env-parser.git",
     "type": "git"
