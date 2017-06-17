@@ -1,7 +1,16 @@
 {
   "name": "inject-env",
   "description": "Inject environment variables to string",
+  "keywords": [
+    "inject",
+    "string",
+    "env",
+    "environment"
+  ],
   "version": "0.1.1",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
   "main": "index.js",
   "typing": "index.d.ts",
   "repository": {
@@ -12,13 +21,23 @@
     "name": "Taehyun Kim",
     "email": "kgyoo8232@gmail.com"
   },
+  "bugs": {
+    "url": "https://github.com/kimxogus/inject-env/issues"
+  },
   "scripts": {
-    "test": "jest",
+    "test": "node scripts/test",
     "prepublish": "npm run test"
   },
   "license": "MIT",
   "devDependencies": {
-    "jest-cli": "^20.0.4"
+    "assert": "^1.4.1",
+    "jest": "^20.0.4"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "jest": {
+    "testPathIgnorePatterns": [
+      "node_modules/",
+      "scripts/"
+    ]
+  }
 }

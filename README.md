@@ -1,5 +1,5 @@
 # inject-env
-> Parse environment variables from string
+> Inject environment variables to string
 
 [![npm version](https://img.shields.io/npm/v/inject-env.svg)](https://npmjs.org/package/inject-env)
 [![npm downloads](https://img.shields.io/npm/dm/inject-env.svg)](https://npmjs.org/package/inject-env)
