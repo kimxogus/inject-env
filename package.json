@@ -30,14 +30,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "assert": "^1.4.1",
-    "jest": "^20.0.4"
+    "assert": "^1.4.1"
   },
-  "dependencies": {},
-  "jest": {
-    "testPathIgnorePatterns": [
-      "node_modules/",
-      "scripts/"
-    ]
-  }
+  "dependencies": {}
 }
