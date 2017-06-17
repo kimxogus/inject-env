@@ -1,11 +1,11 @@
 {
-  "name": "string-env-parser",
-  "description": "Parse environment variables from string",
+  "name": "inject-env",
+  "description": "Inject environment variables to string",
   "version": "0.1.1",
   "main": "index.js",
   "typing": "index.d.ts",
   "repository": {
-    "url": "https://github.com/kimxogus/string-env-parser.git",
+    "url": "https://github.com/kimxogus/inject-env.git",
     "type": "git"
   },
   "author": {

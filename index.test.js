@@ -1,20 +1,20 @@
-var stringEnvParser = require('./index');
+var injectEnv = require('inject-env');
 
-describe('string-env-parser', function() {
+describe('inject-env', function() {
   it('should extract env variable', function() {
-    expect(stringEnvParser('${PWD}')).toBe(process.cwd());
-    expect(stringEnvParser('${PWD}/${PWD}')).toBe(process.cwd() + '/' + process.cwd());
-    expect(stringEnvParser('${PWD}/file')).toBe(process.cwd() + '/file');
+    expect(injectEnv('${PWD}')).toBe(process.cwd());
+    expect(injectEnv('${PWD}/${PWD}')).toBe(process.cwd() + '/' + process.cwd());
+    expect(injectEnv('${PWD}/file')).toBe(process.cwd() + '/file');
   });
 
   it('should return default value if env does not exists', function() {
-    expect(stringEnvParser('${NOT_EXISTS:default}')).toBe('default');
-    expect(stringEnvParser('${NOT_EXISTS:default}/${NO:no}')).toBe('default/no');
-    expect(stringEnvParser('${NOT_EXISTS:default}/file')).toBe('default/file');
+    expect(injectEnv('${NOT_EXISTS:default}')).toBe('default');
+    expect(injectEnv('${NOT_EXISTS:default}/${NO:no}')).toBe('default/no');
+    expect(injectEnv('${NOT_EXISTS:default}/file')).toBe('default/file');
   });
 
   it('does not work without \'{\' and \'}\' characters', function() {
-    expect(stringEnvParser('$NODE_ENV')).toBe('$NODE_ENV');
-    expect(stringEnvParser('$NODE_ENV:default')).toBe('$NODE_ENV:default');
+    expect(injectEnv('$NODE_ENV')).toBe('$NODE_ENV');
+    expect(injectEnv('$NODE_ENV:default')).toBe('$NODE_ENV:default');
   });
 });

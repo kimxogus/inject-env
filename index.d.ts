@@ -1,6 +1,6 @@
-declare namespace stringEnvParser {
+declare namespace injectEnv {
     export function getEnvVar(name: string, defaultValue: string): string;
 }
 
-declare function stringEnvParser (s: string): string;
-export = stringEnvParser;
+declare function injectEnv (s: string): string;
+export = injectEnv;

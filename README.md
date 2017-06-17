@@ -1,37 +1,37 @@
-# string-env-parser
+# inject-env
 > Parse environment variables from string
 
-[![npm version](https://img.shields.io/npm/v/string-env-parser.svg)](https://npmjs.org/package/string-env-parser)
-[![npm downloads](https://img.shields.io/npm/dm/string-env-parser.svg)](https://npmjs.org/package/string-env-parser)
+[![npm version](https://img.shields.io/npm/v/inject-env.svg)](https://npmjs.org/package/inject-env)
+[![npm downloads](https://img.shields.io/npm/dm/inject-env.svg)](https://npmjs.org/package/inject-env)
 
 
-[![Build Status](https://travis-ci.org/kimxogus/string-env-parser.svg?branch=master)](https://travis-ci.org/kimxogus/string-env-parser)
+[![Build Status](https://travis-ci.org/kimxogus/inject-env.svg?branch=master)](https://travis-ci.org/kimxogus/inject-env)
 
 ## Installation
 - npm
 ```bash
-npm install string-env-parser
+npm install inject-env
 ```
 
 - yarn
 ```bash
-yarn add string-env-parser
+yarn add inject-env
 ```
 
 ## Usage
 ```js
-import stringEnvParser from 'string-env-parser'
+import injectEnv from 'inject-env'
 
-const bashProfilePath = stringEnvParser('${HOME}/.bash_profile');   // /your/home/.bash_profile
+const bashProfilePath = injectEnv('${HOME}/.bash_profile');   // /your/home/.bash_profile
 
-const apiURL = stringEnvParser('${HTTP_PROXY}/api');                // http://proxy.url/api
+const apiURL = injectEnv('${HTTP_PROXY}/api');                // http://proxy.url/api
 
 // Without default value
-stringEnvParser('${NODE_ENV}');             // undefined
+injectEnv('${NODE_ENV}');             // undefined
 
 // With default value
-stringEnvParser('${NODE_ENV:development}')  // development
+injectEnv('${NODE_ENV:development}')  // development
 
 // Does not work without '{' and '}' characters!
-stringEnvParser('$NODE_ENV');               // $NODE_ENV
+injectEnv('$NODE_ENV');               // $NODE_ENV
 ```
