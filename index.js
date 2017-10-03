@@ -6,11 +6,22 @@ function getEnvVar(name, defaultValue) {
 
 exports.getEnvVar = getEnvVar;
 
-module.exports = function(s) {
-  while (regexp.test(s)) {
-    var r = RegExp.$1;
-    var split = r.split(':');
-    s = s.replace('${' + r + '}', getEnvVar(split[0], split[1] || ''));
+function injectEnv(input) {
+  if(typeof input === 'string') {
+    while (regexp.test(input)) {
+      var r = RegExp.$1;
+      var split = r.split(':');
+      input = input.replace('${' + r + '}', getEnvVar(split[0], split[1] || ''));
+    }
+    return input;
+  } else if(Array.isArray(input)) {
+    return input.map(i => injectEnv(i));
+  } else {
+    return Object.keys(input).reduce((a, b) => {
+      a[b] = injectEnv(input[b]);
+      return a;
+    }, {});
   }
-  return s;
-};
+}
+
+module.exports = injectEnv;
