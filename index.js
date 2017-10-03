@@ -1,4 +1,5 @@
 var has = require('lodash.has');
+var isPlainObject = require('lodash.isplainobject');
 
 var regexp = /\$\{(.*?)\}/;
 
@@ -19,12 +20,14 @@ function injectEnv(input, env) {
     return input;
   } else if(Array.isArray(input)) {
     return input.map(i => injectEnv(i, env));
-  } else {
+  } else if(isPlainObject(input)) {
     return Object.keys(input).reduce((a, b) => {
       a[b] = injectEnv(input[b], env);
       return a;
     }, {});
   }
+
+  return input;
 }
 
 module.exports = injectEnv;
