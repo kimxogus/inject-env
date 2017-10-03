@@ -34,4 +34,8 @@ injectEnv('${NODE_ENV:development}')  // development
 
 // Does not work without '{' and '}' characters!
 injectEnv('$NODE_ENV');               // $NODE_ENV
+
+injectEnv(['${NODE_ENV}', '${PWD}'])  // [undefined, '/your/pwd']
+
+injectEnv({a: '${NODE_ENV}', b: '${PWD}'}) // {a: undefined, b: '/your/pwd'}
 ```
