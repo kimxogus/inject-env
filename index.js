@@ -18,10 +18,10 @@ function injectEnv(input, env) {
     }
     return input;
   } else if(Array.isArray(input)) {
-    return input.map(i => injectEnv(i));
+    return input.map(i => injectEnv(i, env));
   } else {
     return Object.keys(input).reduce((a, b) => {
-      a[b] = injectEnv(input[b]);
+      a[b] = injectEnv(input[b], env);
       return a;
     }, {});
   }
