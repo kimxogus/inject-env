@@ -1,11 +1,10 @@
-var has = require('lodash.has');
 var isPlainObject = require('lodash.isplainobject');
 
 var regexp = /\$\{(.*?)\}/;
 
 function getEnvVar(name, defaultValue, env) {
   env = env || process.env;
-  return has(env, name) ? env[name] : defaultValue;
+  return env[name] ? env[name] : defaultValue;
 }
 
 exports.getEnvVar = getEnvVar;

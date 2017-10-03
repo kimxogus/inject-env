@@ -12,6 +12,7 @@ assert.equal(injectEnv('${PWD}/file'), process.cwd() + '/file', 'should extract 
 
 // should return default value if env does not exists
 assert.equal(injectEnv('${NOT_EXISTS:default}'), 'default', 'should return default value if env does not exists');
+assert.equal(injectEnv('${NOT_EXISTS}', {defaultValue: ''}), '', 'should return default value if env does not exists');
 assert.equal(injectEnv('${NOT_EXISTS:default}/${NO:no}'), 'default/no', 'should return default value if env does not exists');
 assert.equal(injectEnv('${NOT_EXISTS:default}/file'), 'default/file', 'should return default value if env does not exists');
 

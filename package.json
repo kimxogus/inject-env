@@ -29,11 +29,16 @@
     "prepublish": "npm run test"
   },
   "license": "MIT",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "LICENSE",
+    "README.md"
+  ],
   "devDependencies": {
     "assert": "^1.4.1"
   },
   "dependencies": {
-    "lodash.has": "^4.5.2",
     "lodash.isplainobject": "^4.0.6"
   }
 }
