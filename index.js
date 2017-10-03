@@ -12,6 +12,7 @@ exports.getEnvVar = getEnvVar;
 
 function injectEnv(input, option) {
   if(typeof input === 'string') {
+    option = option || {};
     while (regexp.test(input)) {
       var r = RegExp.$1;
       var split = r.split(':');
