@@ -1,10 +1,10 @@
 declare namespace injectEnv {
-    export function getEnvVar(name: string, defaultValue: ?string, env: ?object): string;
 }
 
 interface option {
   defaultValue: ?(string | number),
   env: ?object,
+  verbose: ?boolean,
 }
 
 declare function injectEnv (s: string, option: ?option): string;
