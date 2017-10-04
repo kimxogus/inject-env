@@ -30,7 +30,16 @@ const apiURL = injectEnv('${HTTP_PROXY}/api');                // http://proxy.ur
 injectEnv('${NODE_ENV}');             // undefined
 
 // With default value
-injectEnv('${NODE_ENV:development}')  // development
+injectEnv('${NODE_ENV:-development}')  // development
+
+// With default value
+injectEnv('${NODE_ENV-development}')   // development if unset
+
+// With substitution value
+injectEnv('${NODE_ENV:+development}')  // development if value set
+
+// With substitution value
+injectEnv('${NODE_ENV+development}')   // development if set
 
 // Does not work without '{' and '}' characters!
 injectEnv('$NODE_ENV');               // $NODE_ENV
