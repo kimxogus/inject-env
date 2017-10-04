@@ -2,6 +2,8 @@ var isPlainObject = require('lodash.isplainobject');
 var defaultTo = require('lodash.defaultto');
 var has = require('lodash.has');
 
+Object.assign = Object.assign || require('object-assign');
+
 var varNameRegexp = /^[a-z][a-zA-Z0-9_]*$/;
 var regexp = /\$\{(.*?)\}/;
 
