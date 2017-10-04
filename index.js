@@ -3,7 +3,7 @@ var has = require('lodash.has');
 
 Object.assign = Object.assign || require('object-assign');
 
-var varNameRegexp = /^[a-z][a-zA-Z0-9_]*$/;
+var varNameRegexp = /^[a-zA-Z0-9_]*$/;
 var regexp = /\$\{(.*?)\}/;
 
 function wrapR(r) {
@@ -60,7 +60,7 @@ function injectEnv(input, option) {
         return r.indexOf(d) !== -1;
       });
       if(!supportedDelimiter) {
-        if(varNameRegexp.test(r)) {
+        if(!varNameRegexp.test(r)) {
           throw new Error(
             'Unsupported parameter in "${' + r + '}". \n - Supported delimiters: '
               + delimiters.join(', ')

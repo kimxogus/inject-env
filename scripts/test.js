@@ -7,6 +7,9 @@ var injectEnv = require('../index');
 
 // should extract env variable
 assert.equal(injectEnv('${PWD}'), process.cwd(), 'should extract env variable');
+try {
+  console.log(injectEnv('${PWD:asdf}'));
+} catch (e) {}
 assert.equal(injectEnv('${PWD}/${PWD}'), process.cwd() + '/' + process.cwd(), 'should extract env variable');
 assert.equal(injectEnv('${PWD}/file'), process.cwd() + '/file', 'should extract env variable');
 
