@@ -1,5 +1,4 @@
 var isPlainObject = require('lodash.isplainobject');
-var defaultTo = require('lodash.defaultto');
 var has = require('lodash.has');
 
 Object.assign = Object.assign || require('object-assign');
